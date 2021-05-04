@@ -14,7 +14,7 @@
 		0BDA9F5F2640840900217778 /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA9F5E2640840900217778 /* FactTableViewCell.swift */; };
 		0BE430C32631DE0700F88848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C22631DE0700F88848 /* AppDelegate.swift */; };
 		0BE430C52631DE0700F88848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C42631DE0700F88848 /* SceneDelegate.swift */; };
-		0BE430C72631DE0700F88848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C62631DE0700F88848 /* ViewController.swift */; };
+		0BE430C72631DE0700F88848 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C62631DE0700F88848 /* FactViewController.swift */; };
 		0BE430CC2631DE0800F88848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE430CB2631DE0800F88848 /* Assets.xcassets */; };
 		0BE430CF2631DE0800F88848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE430CD2631DE0800F88848 /* LaunchScreen.storyboard */; };
 		0BE430DC2631DEA200F88848 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430DB2631DEA200F88848 /* ApiService.swift */; };
@@ -30,7 +30,7 @@
 		0BE430BF2631DE0700F88848 /* Teste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE430C22631DE0700F88848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE430C42631DE0700F88848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BE430C62631DE0700F88848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0BE430C62631DE0700F88848 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		0BE430CB2631DE0800F88848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BE430CE2631DE0800F88848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BE430D02631DE0800F88848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				0BE430D82631DE2F00F88848 /* Model */,
 				0BE430D72631DE2500F88848 /* Controller */,
 				0BE430C22631DE0700F88848 /* AppDelegate.swift */,
-				0BE430C62631DE0700F88848 /* ViewController.swift */,
+				0BE430C62631DE0700F88848 /* FactViewController.swift */,
 				0BBB753D2637062400C05F06 /* Model_Fact.swift */,
 				0B12A3E8263875B200E9654B /* FactViewModel.swift */,
 				0BE430DB2631DEA200F88848 /* ApiService.swift */,
@@ -262,7 +262,7 @@
 			files = (
 				0B12A3E9263875B200E9654B /* FactViewModel.swift in Sources */,
 				0BBB753E2637062400C05F06 /* Model_Fact.swift in Sources */,
-				0BE430C72631DE0700F88848 /* ViewController.swift in Sources */,
+				0BE430C72631DE0700F88848 /* FactViewController.swift in Sources */,
 				0BDA9F5F2640840900217778 /* FactTableViewCell.swift in Sources */,
 				0BE430C32631DE0700F88848 /* AppDelegate.swift in Sources */,
 				0B12A402263990E700E9654B /* Model_Category.swift in Sources */,

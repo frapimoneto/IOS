@@ -12,7 +12,7 @@ class FactViewModel {
     private var apiService = ApiService()
     private var facts = [Fact]()
     
-    func fetchPopularMoviesData(completion: @escaping () -> ()) {
+    func fetchFacts(completion: @escaping () -> ()) {
         
         apiService.getChuckNorrisFacts { [weak self] (dataTask) in
             

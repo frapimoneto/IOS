@@ -19,7 +19,7 @@ class FactTableViewCell: UITableViewCell {
     private func updateUI(fact: String?, category: [String]?) {
                 
                 self.factText.text = fact
-//                self.categoryFact.text = category 
+                self.categoryFact.text = "teste"
                 
             }
 }
