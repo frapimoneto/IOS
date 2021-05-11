@@ -9,11 +9,23 @@ import Foundation
 
 
 struct CategoryData: Decodable {
-//    let facts: [Fact]
-    let text: String
+    let categories: [Category]
+//    let text: String
 
     private enum CodingKeys: String, CodingKey {
-        case text = ""
+        case categories = "result"
     }
+    
+    
 }
+    struct Category: Decodable {
+        let text: String?
+        
+        private enum CodingKeys: String, CodingKey {
+            case text = ""
+        }
+    }
+    
+    
+
 

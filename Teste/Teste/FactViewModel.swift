@@ -33,6 +33,10 @@ class FactViewModel {
         return 0
     }
     
+    func share(indexPath: Int) -> String {
+        return facts[indexPath].url!
+    }
+    
     func cellForRowAt (indexPath: IndexPath) -> Fact {
         return facts[indexPath.row]
     }

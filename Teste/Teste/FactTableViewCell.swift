@@ -15,11 +15,9 @@ class FactTableViewCell: UITableViewCell {
     func setCellWithValuesOf(_ fact:Fact) {
                 updateUI(fact: fact.fact, category: fact.category)
             }
-    
+ 
     private func updateUI(fact: String?, category: [String]?) {
-                
-                self.factText.text = fact
-                self.categoryFact.text = "teste"
-                
-            }
+            self.factText.text = fact
+            self.categoryFact.text = category?.first?.uppercased() ?? "UNCATEGORIZED"
+        }
 }

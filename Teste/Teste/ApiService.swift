@@ -12,7 +12,7 @@ class ApiService {
     private var dataTask: FactsData?
     
     func getChuckNorrisFacts(completion: @escaping (Result<FactsData, Error>) -> Void){
-        let chuckNorrisURL = "https://api.chucknorris.io/jokes/search?query=car"
+        let chuckNorrisURL = "https://api.chucknorris.io/jokes/search?query=code"
         
 //        AF.request(chuckNorrisURL).responseDecodable(of:FactsData.self){ response in
 //            switch response.result {
