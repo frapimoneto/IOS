@@ -55,7 +55,7 @@
                                                         <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="shareLink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hMU-Z6-GJE"/>
+                                                        <action selector="shareLink:" destination="U4T-Qa-ZdL" eventType="touchUpInside" id="djJ-VQ-Rxb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -96,6 +96,9 @@
                                 <state key="normal" title="Button">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareLink:" destination="J7J-XI-QKX" eventType="touchUpInside" id="Cpd-cw-9rn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -118,6 +121,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="J7J-XI-QKX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-215.8878504672897" y="56.371490280777543"/>
         </scene>

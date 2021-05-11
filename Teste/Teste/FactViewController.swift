@@ -19,12 +19,12 @@ class FactViewController: UIViewController {
 //        self.present(activityVc, animated: true, completion: nil)
 //    }
     
-    @IBAction func shareLink(_ sender: Any) {
-        let activityVc = UIActivityViewController(activityItems: [viewModel.share(indexPath: 0)], applicationActivities: nil)
-                activityVc.popoverPresentationController?.sourceView = self.view
-        
-                self.present(activityVc, animated: true, completion: nil)
-    }
+//    @IBAction func shareLink(_ sender: Any) {
+//        let activityVc = UIActivityViewController(activityItems: [viewModel.share(indexPath: 0)], applicationActivities: nil)
+//                activityVc.popoverPresentationController?.sourceView = self.view
+//        
+//                self.present(activityVc, animated: true, completion: nil)
+//    }
     
     private var viewModel = FactViewModel()
     
@@ -54,6 +54,8 @@ extension FactViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FactTableViewCell
         
+        cell.delegate = self
+        
         let categorylabel = cell.categoryFact.layer
         
         let fact = viewModel.cellForRowAt(indexPath: indexPath)
@@ -78,5 +80,16 @@ extension FactViewController: UITableViewDataSource {
         return cell
     }
     
+
     
+}
+
+extension FactViewController: FactTableViewCellDelegate {
+    func share(fact: Fact) {
+        guard let url = URL(string: fact.url ?? "") else {return}
+        let activityVc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        activityVc.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityVc, animated: true, completion: nil)
+    }
 }
