@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pBl-UU-KAi">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PO5-kI-WBB">
-                                <rect key="frame" x="20" y="86" width="381" height="840"/>
+                                <rect key="frame" x="20" y="130" width="381" height="796"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -81,13 +81,13 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHUCK NORRIS FACTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-xW-ujg">
-                                <rect key="frame" x="27" y="54" width="345" height="24"/>
+                                <rect key="frame" x="27" y="98" width="345" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXt-gU-qj8">
-                                <rect key="frame" x="373" y="54" width="24" height="23"/>
+                                <rect key="frame" x="373" y="98" width="24" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Ljf-cp-TgI"/>
                                     <constraint firstAttribute="height" constant="23" id="xSt-Q8-lKf"/>
@@ -97,6 +97,7 @@
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchTerm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S1E-n8-xyw"/>
                                     <action selector="shareLink:" destination="J7J-XI-QKX" eventType="touchUpInside" id="Cpd-cw-9rn"/>
                                 </connections>
                             </button>
@@ -116,12 +117,81 @@
                             <constraint firstItem="Q7c-xW-ujg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="gzM-de-94Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="adc-RE-sVn"/>
                     <connections>
                         <outlet property="tableView" destination="PO5-kI-WBB" id="KML-Tb-sK9"/>
+                        <segue destination="URE-qi-Gjn" kind="show" identifier="showSearchPage" id="YOy-RG-7yM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="J7J-XI-QKX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="684.11214953271019" y="56.371490280777543"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="eNh-eg-g9k">
+            <objects>
+                <viewController id="URE-qi-Gjn" customClass="SearchViewController" customModule="Teste" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LzW-ky-gKn">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nxr-tl-Qnc">
+                                <rect key="frame" x="0.0" y="88" width="428" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dql-FW-Uc1"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSq-rf-zLf">
+                                <rect key="frame" x="156" y="167" width="116" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="6xp-4z-NJR"/>
+                                </constraints>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="search:" destination="URE-qi-Gjn" eventType="touchUpInside" id="mpB-xD-kKu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D1b-zw-DrX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nxr-tl-Qnc" firstAttribute="centerX" secondItem="cSq-rf-zLf" secondAttribute="centerX" id="3cn-Hr-MIS"/>
+                            <constraint firstItem="Nxr-tl-Qnc" firstAttribute="centerX" secondItem="LzW-ky-gKn" secondAttribute="centerX" id="43T-QE-8Vr"/>
+                            <constraint firstItem="Nxr-tl-Qnc" firstAttribute="top" secondItem="D1b-zw-DrX" secondAttribute="top" id="b4J-TI-ga8"/>
+                            <constraint firstItem="cSq-rf-zLf" firstAttribute="leading" secondItem="D1b-zw-DrX" secondAttribute="leading" constant="156" id="iWy-dt-sJ2"/>
+                            <constraint firstItem="cSq-rf-zLf" firstAttribute="top" secondItem="Nxr-tl-Qnc" secondAttribute="bottom" constant="35" id="sTz-sb-bjx"/>
+                            <constraint firstItem="Nxr-tl-Qnc" firstAttribute="leading" secondItem="D1b-zw-DrX" secondAttribute="leading" id="uVF-CI-nXS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="izn-0E-sly"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Nxr-tl-Qnc" id="3Cg-fW-zD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bg-MJ-mDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.6915887850466" y="55.723542116630675"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XHh-4c-BxA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pBl-UU-KAi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g3D-Pf-3GJ">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tZs-yK-cfr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Wr-mN-GhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-215.8878504672897" y="56.371490280777543"/>
         </scene>
@@ -131,6 +201,9 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

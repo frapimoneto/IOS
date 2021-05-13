@@ -12,9 +12,9 @@ class FactViewModel {
     private var apiService = ApiService()
     private var facts = [Fact]()
     
-    func fetchFacts(completion: @escaping () -> ()) {
+    func fetchFacts(term: String, completion: @escaping () -> ()) {
         
-        apiService.getChuckNorrisFacts { [weak self] (dataTask) in
+        apiService.getChuckNorrisFacts(query: term) { [weak self] (dataTask) in
             
             switch dataTask {
             case .success(let listOf):

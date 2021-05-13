@@ -10,21 +10,14 @@ import UIKit
 class FactViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var cell: FactTableViewCell!
     
-//    @IBAction func shareLink(_ sender: Any) {
-//        let activityVc = UIActivityViewController(activityItems: ["teste"], applicationActivities: nil)
-//        activityVc.popoverPresentationController?.sourceView = self.view
-//
-//        self.present(activityVc, animated: true, completion: nil)
-//    }
     
-//    @IBAction func shareLink(_ sender: Any) {
-//        let activityVc = UIActivityViewController(activityItems: [viewModel.share(indexPath: 0)], applicationActivities: nil)
-//                activityVc.popoverPresentationController?.sourceView = self.view
-//        
-//                self.present(activityVc, animated: true, completion: nil)
-//    }
+    @IBAction func searchTerm(_ sender: Any) {
+        performSegue(withIdentifier: "showSearchPage", sender: self)
+    }
+    
+    var term = ""
+    
     
     private var viewModel = FactViewModel()
     
@@ -33,11 +26,19 @@ class FactViewController: UIViewController {
 //        tableView.layer.borderWidth = 2
         tableView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         
+        navigationItem.title = "Home Page"
+        
         loadFacts()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? SearchViewController {
+            controller.delegate = self
+        }
     }
 
     private func loadFacts() {
-        viewModel.fetchFacts { [weak self] in
+        viewModel.fetchFacts(term: term) { [weak self] in
             self?.tableView.dataSource = self
             self?.tableView.reloadData()
         }
@@ -89,7 +90,18 @@ extension FactViewController: FactTableViewCellDelegate {
         guard let url = URL(string: fact.url ?? "") else {return}
         let activityVc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         activityVc.popoverPresentationController?.sourceView = self.view
-        
+
         self.present(activityVc, animated: true, completion: nil)
+        
+//        performSegue(withIdentifier: "showSearchPage", sender: self)
     }
+}
+
+extension FactViewController: SearchViewControllerDelegate {
+    func search(text: String) {
+        term = text
+        loadFacts()
+    }
+    
+    
 }

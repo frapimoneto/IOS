@@ -12,7 +12,7 @@
 		0B54146226408012007842CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B54146426408012007842CE /* Main.storyboard */; };
 		0BBB753E2637062400C05F06 /* Model_Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB753D2637062400C05F06 /* Model_Fact.swift */; };
 		0BDA9F5F2640840900217778 /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA9F5E2640840900217778 /* FactTableViewCell.swift */; };
-		0BDA9FA2264967B900217778 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA9FA1264967B900217778 /* Search.storyboard */; };
+		0BDA9FA8264AC10900217778 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA9FA7264AC10900217778 /* SearchViewController.swift */; };
 		0BE430C32631DE0700F88848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C22631DE0700F88848 /* AppDelegate.swift */; };
 		0BE430C52631DE0700F88848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C42631DE0700F88848 /* SceneDelegate.swift */; };
 		0BE430C72631DE0700F88848 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE430C62631DE0700F88848 /* FactViewController.swift */; };
@@ -28,7 +28,7 @@
 		0B54146326408012007842CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BBB753D2637062400C05F06 /* Model_Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Fact.swift; sourceTree = "<group>"; };
 		0BDA9F5E2640840900217778 /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
-		0BDA9FA1264967B900217778 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		0BDA9FA7264AC10900217778 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0BE430BF2631DE0700F88848 /* Teste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE430C22631DE0700F88848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE430C42631DE0700F88848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		0B12A3E72638759200E9654B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0B12A3E8263875B200E9654B /* FactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -88,18 +89,10 @@
 				0BE430D82631DE2F00F88848 /* Model */,
 				0BE430D72631DE2500F88848 /* Controller */,
 				0BE430C22631DE0700F88848 /* AppDelegate.swift */,
-				0BE430C62631DE0700F88848 /* FactViewController.swift */,
-				0BBB753D2637062400C05F06 /* Model_Fact.swift */,
-				0B12A3E8263875B200E9654B /* FactViewModel.swift */,
-				0BE430DB2631DEA200F88848 /* ApiService.swift */,
 				0BE430C42631DE0700F88848 /* SceneDelegate.swift */,
 				0BE430CB2631DE0800F88848 /* Assets.xcassets */,
-				0BE430CD2631DE0800F88848 /* LaunchScreen.storyboard */,
 				0BE430D02631DE0800F88848 /* Info.plist */,
-				0B54146426408012007842CE /* Main.storyboard */,
-				0B12A401263990E700E9654B /* Model_Category.swift */,
 				0BDA9F5E2640840900217778 /* FactTableViewCell.swift */,
-				0BDA9FA1264967B900217778 /* Search.storyboard */,
 			);
 			path = Teste;
 			sourceTree = "<group>";
@@ -107,6 +100,8 @@
 		0BE430D72631DE2500F88848 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0BE430C62631DE0700F88848 /* FactViewController.swift */,
+				0BDA9FA7264AC10900217778 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +109,8 @@
 		0BE430D82631DE2F00F88848 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B12A401263990E700E9654B /* Model_Category.swift */,
+				0BBB753D2637062400C05F06 /* Model_Fact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +118,8 @@
 		0BE430D92631DE4100F88848 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0BE430CD2631DE0800F88848 /* LaunchScreen.storyboard */,
+				0B54146426408012007842CE /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +127,7 @@
 		0BE430DA2631DE5900F88848 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0BE430DB2631DEA200F88848 /* ApiService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -210,7 +210,6 @@
 			files = (
 				0B54146226408012007842CE /* Main.storyboard in Resources */,
 				0BE430CF2631DE0800F88848 /* LaunchScreen.storyboard in Resources */,
-				0BDA9FA2264967B900217778 /* Search.storyboard in Resources */,
 				0BE430CC2631DE0800F88848 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +266,7 @@
 				0B12A3E9263875B200E9654B /* FactViewModel.swift in Sources */,
 				0BBB753E2637062400C05F06 /* Model_Fact.swift in Sources */,
 				0BE430C72631DE0700F88848 /* FactViewController.swift in Sources */,
+				0BDA9FA8264AC10900217778 /* SearchViewController.swift in Sources */,
 				0BDA9F5F2640840900217778 /* FactTableViewCell.swift in Sources */,
 				0BE430C32631DE0700F88848 /* AppDelegate.swift in Sources */,
 				0B12A402263990E700E9654B /* Model_Category.swift in Sources */,
